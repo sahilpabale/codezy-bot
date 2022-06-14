@@ -5,11 +5,13 @@
     "rootDir": "src/",
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "target": "es6",
+    "forceConsistentCasingInFileNames": true,
+    "target": "ES2015",
     "moduleResolution": "Node",
     "esModuleInterop": true,
-    "module": "CommonJS",
-    "removeComments": true
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "noImplicitAny": true
   },
   "include": [
     "src/**/*"

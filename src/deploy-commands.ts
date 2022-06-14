@@ -1,21 +1,16 @@
-import { readdirSync } from "node:fs";
 import { REST } from "@discordjs/rest";
 import { Routes } from "discord-api-types/v9";
 import { config } from "dotenv";
+import commandsArr from "./commands/index";
 
 config();
 
 const clientId = process.env.CLIENT_ID!;
 const token = process.env.TOKEN!;
-
 const commands = [];
 
-const commandFiles = readdirSync("src/commands").filter((file: any) =>
-  file.endsWith(".js"),
-);
-
-for (const file of commandFiles) {
-  const command = require(`src/commands/${file}`);
+for (const commandData of commandsArr) {
+  let command = commandData.exp;
   commands.push(command.data.toJSON());
 }
 

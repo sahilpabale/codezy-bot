@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/bot.js",
-    "dev": "tsc && nodemon dist/bot.js",
-    "build": "tsc",
-    "reg": "tsc && node dist/deploy-commands.js"
+    "dev": "nodemon src/bot.ts",
+    "build": "rm -rf dist/ && tsc",
+    "reg": "ts-node src/deploy-commands.ts"
   },
   "keywords": [],
   "author": "",
